@@ -13,7 +13,7 @@ EG_NS_BEGIN
 ////////////////////////////////////////////////////////////////
 namespace detail {
 	struct GraphDefiner {
-		GraphDefiner(const char* defaultName, const char* specifiedName = nullptr) {
+		explicit GraphDefiner(const char* defaultName, const char* specifiedName = nullptr) {
 			name = specifiedName ? specifiedName : defaultName;
 		}
 

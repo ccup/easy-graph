@@ -118,4 +118,10 @@ FIXTURE(GraphCheckTest) {
 			ASSERT_FALSE(edge.getAttr<const char*>("cond"));
 		};
 	}
+
+	TEST("should match patterns") {
+		CHECK_GRAPH(sample) {
+			ASSERT_TRUE(graph.hasNode("a"));
+		};
+	}
 };

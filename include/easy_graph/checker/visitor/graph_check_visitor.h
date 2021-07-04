@@ -13,8 +13,10 @@ struct GraphCheckVisitor: GraphVisitor {
 	size_t edgeCount{0};
 
     bool isEqualTo(const Graph&) const;
+
 	bool hasNode(const NodeId&) const;
 	bool hasEdge(const Edge&) const;
+
 	void dump() const;
 
 private:

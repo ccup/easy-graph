@@ -7,7 +7,6 @@
 EG_NS_BEGIN
 
 struct EdgeAdder : Revise {
-
 	explicit EdgeAdder(const Edge&);
 
 private:

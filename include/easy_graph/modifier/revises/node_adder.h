@@ -7,7 +7,6 @@
 EG_NS_BEGIN
 
 struct NodeAdder : Revise  {
-
 	explicit NodeAdder(Node);
 
 private:

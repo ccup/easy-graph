@@ -11,7 +11,7 @@ struct GraphEasyOption;
 struct Graph;
 
 struct GraphEasyLayoutContext {
-	GraphEasyLayoutContext(const GraphEasyOption&);
+	explicit GraphEasyLayoutContext(const GraphEasyOption&);
 
 	void enterGraph(const Graph&);
 	void exitGraph();

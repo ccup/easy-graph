@@ -7,7 +7,6 @@
 EG_NS_BEGIN
 
 struct EdgeEraser : Revise {
-
 	explicit EdgeEraser(const Edge&);
 
 private:

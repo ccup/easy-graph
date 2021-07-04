@@ -10,7 +10,7 @@ EG_NS_BEGIN
 
 namespace detail {
 	struct GraphChecker {
-		GraphChecker(const Graph& graph)
+		explicit GraphChecker(const Graph& graph)
 		: graph(graph) {
 		}
 

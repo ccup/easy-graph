@@ -10,7 +10,7 @@ EG_NS_BEGIN
 struct GraphEasyOption;
 
 struct GraphEasyVisitor : GraphVisitor {
-	GraphEasyVisitor(const GraphEasyOption&);
+	explicit GraphEasyVisitor(const GraphEasyOption&);
 
 	std::string getLayout() const;
 

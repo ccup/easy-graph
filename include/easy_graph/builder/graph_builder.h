@@ -8,7 +8,7 @@ EG_NS_BEGIN
 struct Link;
 
 struct GraphBuilder {
-	GraphBuilder(const std::string& name);
+	explicit GraphBuilder(const std::string& name);
 
 	template<typename NODE>
 	Node*  buildNode(NODE && node) {

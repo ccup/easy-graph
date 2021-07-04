@@ -9,7 +9,6 @@ EG_NS_BEGIN
 struct Node;
 
 struct NodeEraser : Revise  {
-
 	explicit NodeEraser(const Node&);
 
 private:

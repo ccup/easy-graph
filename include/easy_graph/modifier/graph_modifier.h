@@ -10,7 +10,7 @@ struct Graph;
 enum class Status;
 
 struct GraphModifier {
-	GraphModifier(Graph&);
+	explicit GraphModifier(Graph&);
 
 	template<typename REVISE>
 	GraphModifier& addRevise(REVISE && revise) {

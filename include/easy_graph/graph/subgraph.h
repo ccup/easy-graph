@@ -12,7 +12,7 @@ struct Graph;
 struct WireVisitor;
 
 struct Subgraph {
-	Subgraph(const Graph&);
+	explicit Subgraph(const Graph&);
 
 	__DECL_EQUALS(Subgraph);
 

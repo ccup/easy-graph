@@ -7,7 +7,6 @@
 EG_NS_BEGIN
 
 struct AnyRevise : Revise {
-
 	template<typename REVISE>
 	explicit AnyRevise(REVISE && revise)
 	: revise(std::forward<REVISE>(revise)) {
