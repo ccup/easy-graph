@@ -6,11 +6,8 @@
 
 EG_NS_BEGIN
 
-struct DisjunktiveMatcher : Matcher {
-	template<typename ...MATCHER>
-	explicit DisjunktiveMatcher(MATCHER && ...matcher) {
-		(matchers.emplace_back(std::forward<MATCHER>(&matcher)), ...);
-	}
+struct DisjunctiveMatcher : Matcher {
+	void add(const Matcher&);
 
 private:
 	bool eval() const override;

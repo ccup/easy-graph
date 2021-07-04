@@ -2,7 +2,13 @@
 
 EG_NS_BEGIN
 
-bool ConjunktiveMatcher::eval() const {
+void ConjunctiveMatcher::add(const Matcher& matcher) {
+	matchers.push_back(&matcher);
+}
+
+bool ConjunctiveMatcher::eval() const {
+	if (!matchers.size()) return false;
+
 	for (auto matcher : matchers) {
 		if (!matcher->eval()) return false;
 	}
