@@ -7,7 +7,7 @@
 
 EG_NS_BEGIN
 
-using Edges = std::vector<const Edge*>;
+using Edges = std::list<const Edge*>;
 struct Endpoint;
 
 struct NodeCheckVisitor: GraphVisitor {
@@ -40,7 +40,7 @@ private:
 	const Node& node;
 	Edges prevEdges;
 	Edges postEdges;
-	std::vector<std::string> subgraphs;
+	std::list<std::string> subgraphs;
 };
 
 EG_NS_END

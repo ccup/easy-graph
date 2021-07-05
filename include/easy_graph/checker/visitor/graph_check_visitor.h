@@ -12,7 +12,7 @@ struct GraphCheckVisitor: GraphVisitor {
 	size_t nodeCount{0};
 	size_t edgeCount{0};
 
-    bool isEqualTo(const Graph&) const;
+	bool isEqualTo(const Graph&) const;
 
 	bool hasNode(const NodeId&) const;
 	bool hasEdge(const Edge&) const;

@@ -1,15 +1,9 @@
 #include "easy_graph/graph/subgraph.h"
 #include "easy_graph/graph/graph.h"
 #include "easy_graph/graph/wire_visitor.h"
-#include "easy_graph/infra/vector_eq.h"
+#include "easy_graph/infra/container_eq.h"
 
 EG_NS_BEGIN
-
-namespace {
-	bool isWiresEqual(const std::vector<Wire>& lhs, const std::vector<Wire>& rhs) {
-		return is_vector_unorder_equal(lhs, rhs);
-	}
-}
 
 Subgraph::Subgraph(const Graph& graph)
 : name(graph.getName()), graph(graph){
@@ -17,8 +11,8 @@ Subgraph::Subgraph(const Graph& graph)
 
 __DEF_EQUALS(Subgraph) {
 	return (this->graph == rhs.graph) &&
-		   isWiresEqual(inputWires, rhs.inputWires) &&
-		   isWiresEqual(outputWires, rhs.outputWires);
+			container_is_equal(inputWires, rhs.inputWires) &&
+			container_is_equal(outputWires, rhs.outputWires);
 }
 
 void Subgraph::setName(const std::string& name) {

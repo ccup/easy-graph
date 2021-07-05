@@ -3,7 +3,7 @@
 
 #include "easy_graph/infra/operator.h"
 #include "easy_graph/graph/wire.h"
-#include <vector>
+#include <list>
 #include <string>
 
 EG_NS_BEGIN
@@ -29,8 +29,8 @@ struct Subgraph {
 private:
 	std::string name;
 	const Graph& graph;
-	std::vector<Wire> inputWires;
-	std::vector<Wire> outputWires;
+	std::list<Wire> inputWires;
+	std::list<Wire> outputWires;
 };
 
 EG_NS_END

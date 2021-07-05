@@ -6,7 +6,7 @@
 #include "easy_graph/graph/subgraph.h"
 #include "easy_graph/attribute/attributes_mixin.h"
 #include "easy_graph/graph/box.h"
-#include <vector>
+#include <list>
 
 EG_NS_BEGIN
 
@@ -43,7 +43,7 @@ struct Node : AttributesMixin
 private:
     NodeId id;
     BoxPtr box;
-    std::vector<Subgraph> subgraphs;
+    std::list<Subgraph> subgraphs;
 };
 
 EG_NS_END

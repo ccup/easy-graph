@@ -2,7 +2,7 @@
 #define H64ABDCBB_7F9D_4D7B_ABC1_BA3AC7DC3B8F
 
 #include "easy_graph/modifier/revise.h"
-#include <vector>
+#include <list>
 
 EG_NS_BEGIN
 
@@ -26,7 +26,7 @@ private:
 
 private:
 	Graph& graph;
-	std::vector<RevisePtr> revises;
+	std::list<RevisePtr> revises;
 };
 
 EG_NS_END

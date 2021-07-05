@@ -1,5 +1,4 @@
 #include <cctest/cctest.h>
-#include "easy_graph/matcher/matcher_eval.h"
 #include "easy_graph/matcher/negative_matcher.h"
 #include "easy_graph/matcher/conjunctive_matcher.h"
 #include "easy_graph/matcher/disjunctive_matcher.h"

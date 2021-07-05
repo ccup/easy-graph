@@ -15,7 +15,7 @@ namespace {
 	}
 
 	struct NodeSubgraphVisitor : SubgraphVisitor {
-		NodeSubgraphVisitor(std::vector<std::string>& subgraphs)
+		NodeSubgraphVisitor(std::list<std::string>& subgraphs)
 		: subgraphs(subgraphs) {
 		}
 
@@ -25,7 +25,7 @@ namespace {
 		}
 
 	private:
-		std::vector<std::string>& subgraphs;
+		std::list<std::string>& subgraphs;
 	};
 }
 

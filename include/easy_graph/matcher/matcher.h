@@ -9,6 +9,11 @@ INTERFACE(Matcher) {
 	ABSTRACT(bool eval() const);
 };
 
+template<typename MATCHER>
+bool matcher_eval(const MATCHER& matcher) {
+	return static_cast<const Matcher&>(matcher).eval();
+}
+
 EG_NS_END
 
 #endif

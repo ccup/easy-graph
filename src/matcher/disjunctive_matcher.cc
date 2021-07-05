@@ -2,13 +2,7 @@
 
 EG_NS_BEGIN
 
-void DisjunctiveMatcher::add(const Matcher& matcher) {
-	matchers.push_back(&matcher);
-}
-
-bool DisjunctiveMatcher::eval() const {
-	if (!matchers.size()) return false;
-
+bool DisjunctiveMatcher::doEval() const {
 	for (auto matcher : matchers) {
 		if (matcher->eval()) return true;
 	}
