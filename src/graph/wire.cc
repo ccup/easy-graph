@@ -13,9 +13,7 @@ __DEF_EQUALS(Wire)
 
 __DEF_COMP(Wire)
 {
-	if (endpoint < rhs.endpoint) return true;
-	if ((endpoint == rhs.endpoint) && (port < rhs.port)) return true;
-	return false;
+	return std::tie(endpoint, port) < std::tie(rhs.endpoint, rhs.port);
 }
 
 Endpoint Wire::getEndpoint() const {

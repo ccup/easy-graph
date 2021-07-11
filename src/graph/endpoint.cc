@@ -13,9 +13,7 @@ __DEF_EQUALS(Endpoint)
 
 __DEF_COMP(Endpoint)
 {
-	if (nodeId < rhs.nodeId) return true;
-	if ((nodeId == rhs.nodeId) && (portId < rhs.portId)) return true;
-	return false;
+	return std::tie(nodeId, portId) < std::tie(rhs.nodeId, rhs.portId);
 }
 
 NodeId Endpoint::getNodeId() const {

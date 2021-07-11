@@ -16,10 +16,7 @@ __DEF_EQUALS(Edge)
 
 __DEF_COMP(Edge)
 {
-	if (src < rhs.src) return true;
-	if ((src == rhs.src) && (dst < rhs.dst)) return true;
-	if ((src == rhs.src) && (dst == rhs.dst) && (type < rhs.type)) return true;
-	return false;
+	return std::tie(src, dst, type) < std::tie(rhs.src, rhs.dst, rhs.type);
 }
 
 const EdgeType& Edge::getType() const {
