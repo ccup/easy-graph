@@ -4,6 +4,9 @@
 #include "easy_graph/checker/node_checker.h"
 #include "easy_graph/checker/edge_checker.h"
 #include "easy_graph/edges/default_edge_type_register.h"
+#include "easy_graph/matcher/matcher.h"
+#include "easy_graph/pred/concrete/node_equal.h"
+#include "easy_graph/pred/concrete/linked_from.h"
 
 USING_EG_NS
 
@@ -121,7 +124,9 @@ FIXTURE(GraphCheckTest) {
 
 	TEST("should match patterns") {
 		CHECK_GRAPH(sample) {
-			ASSERT_TRUE(graph.hasNode("a"));
+			auto node_a = NodeEqual(node_of("a"));
+			auto link_c = LinkedFrom("c");
+			ASSERT_TRUE(graph.match(Matcher().pred(&node_a).pred(&link_c)));
 		};
 	}
 };

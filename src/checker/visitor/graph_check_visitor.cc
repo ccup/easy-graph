@@ -1,4 +1,5 @@
 #include "easy_graph/checker/visitor/graph_check_visitor.h"
+#include "easy_graph/matcher/matcher.h"
 #include "easy_graph/graph/graph.h"
 
 EG_NS_BEGIN
@@ -32,6 +33,11 @@ void GraphCheckVisitor::visit(const Node& node) {
 
 void GraphCheckVisitor::visit(const Edge& edge) {
 	this->edgeCount++;
+}
+
+bool GraphCheckVisitor::match(const Matcher& matcher) const {
+	if (!graph) return false;
+	return matcher.match(*graph);
 }
 
 EG_NS_END

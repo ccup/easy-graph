@@ -2,7 +2,10 @@
 #define H813EC8C1_3850_4320_8AC0_CE071C89B871
 
 #include "easy_graph/graph/node.h"
+#include "easy_graph/graph/nodes.h"
 #include "easy_graph/graph/edge.h"
+#include "easy_graph/graph/edges.h"
+#include "easy_graph/graph/pred.h"
 #include <string>
 #include <set>
 #include <map>
@@ -42,6 +45,9 @@ struct Graph
 
 	std::pair<const Node*, const Node*> findNodesOn(const Edge&) const;
 	std::pair<Node*, Node*> findNodesOn(const Edge&);
+
+	Nodes findNodesBy(const Pred<Node>&) const;
+	Edges findEdgesBy(const Pred<Edge>&) const;
 
 	void remove(const NodeId&);
 	void remove(const Edge&);

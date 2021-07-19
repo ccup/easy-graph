@@ -67,6 +67,27 @@ std::pair<Node*, Node*> Graph::findNodesOn(const Edge& edge) {
 	return const_cast<Graph&>(*this).findNodesOn(edge);
 }
 
+Nodes Graph::findNodesBy(const Pred<Node>& pred) const {
+	Nodes result;
+	std::for_each(nodes.cbegin(), nodes.cend(), [&result, &pred](const auto& item) {
+		const auto& node = item.second;
+		if (pred(node)) {
+			result.push_back(&node);
+		}
+	});
+	return result;
+}
+
+Edges Graph::findEdgesBy(const Pred<Edge>& pred) const {
+	Edges result;
+	std::for_each(edges.cbegin(), edges.cend(), [&result, &pred](const auto& edge) {
+		if (pred(edge)) {
+			result.push_back(&edge);
+		}
+	});
+	return result;
+}
+
 void Graph::remove(const NodeId& id) {
 	nodes.erase(id);
 }

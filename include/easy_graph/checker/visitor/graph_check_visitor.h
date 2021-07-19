@@ -3,9 +3,10 @@
 
 #include "easy_graph/graph/graph_visitor.h"
 #include "easy_graph/graph/node_id.h"
-#include <string>
 
 EG_NS_BEGIN
+
+struct Matcher;
 
 struct GraphCheckVisitor: GraphVisitor {
 	std::string name;
@@ -13,6 +14,8 @@ struct GraphCheckVisitor: GraphVisitor {
 	size_t edgeCount{0};
 
 	bool isEqualTo(const Graph&) const;
+
+	bool match(const Matcher&) const;
 
 	bool hasNode(const NodeId&) const;
 	bool hasEdge(const Edge&) const;
