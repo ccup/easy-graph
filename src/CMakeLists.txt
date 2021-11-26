@@ -1,5 +1,3 @@
-set(CMAKE_CXX_STANDARD 17)
-
 file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS
     "*.c" "*.C" "*.cc" "*.CC" "*.cpp" "*.CPP" "*.c++"
 )
@@ -12,6 +10,8 @@ else()
 endif()
 
 add_library(${TARGET_LIB} ${LIB_TYPE} ${SOURCES})
+
+target_compile_features(${TARGET_LIB} PUBLIC cxx_std_17)
 
 target_include_directories(${TARGET_LIB}
     PUBLIC ${PROJECT_SOURCE_DIR}/include
